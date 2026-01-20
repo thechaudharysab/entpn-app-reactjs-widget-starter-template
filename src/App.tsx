@@ -23,7 +23,7 @@ export default function App() {
 
       <section className="panel">
         <div className="panelHeader">
-          <div className="panelTitle">How to use</div>
+          <div className="panelTitle">How To?</div>
           <div className="counter">
             <span>Count: {count}</span>
             <button type="button" onClick={() => setCount((c) => c + 1)}>
@@ -33,7 +33,7 @@ export default function App() {
         </div>
 
         <p className="help">
-          Import your widget and render it inside the preview area below by
+          Read the <span className="code">README.md</span> to see how to guide. In <span className="code">App.tsx</span> <b>Import</b> your widget and render it inside the <span className="code">widgetAreaBody</span> area below by
           replacing the placeholder content.
           <br />
           Example: <span className="code">{`<YourWidgetComponent />`}</span>
@@ -41,15 +41,15 @@ export default function App() {
       </section>
 
       <section className="panel previewWrap">
-        {/* Import and render <YourWidgetComponent /> inside this div */}
         <div className="widgetArea">
           <div className="widgetAreaBody">
           <p>Preview:{" "} 
           <span className="help" style={{marginBottom: 12}}>
           Your widget will have to be within <span className="code">{`360px`}</span> width. There is also <span className="code">padding: 16px;</span> applied to the right sidebar to all widgets by default on entreprenote app so you don't have to add any margins.
         </span> </p>
-            <CharlieChatWidget />
-            {/* Replace this placeholder with your widget component. */}
+        {/* Import and render <YourWidgetComponent /> here */}
+            {/* <CharlieChatWidget /> */}
+            Replace this placeholder with your widget component.
           </div>
         </div>
       </section>
