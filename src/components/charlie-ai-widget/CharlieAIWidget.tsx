@@ -1,13 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 import "./styles.css"
+import { CharlieAIService } from "../../api/charlie-ai-widget/CharlieAIService";
 
 type Role = "user" | "ai";
 type ChatMessage = { id: string; role: Role; text: string };
-
-const INITIAL_MESSAGES: ChatMessage[] = [
-  { id: "m1", role: "ai", text: "Hey, I'm Charlie. Ask me about your notes." },
-];
 
 const QUICK_ACTIONS = [
   "Summarize this chapter",
@@ -17,11 +14,18 @@ const QUICK_ACTIONS = [
 ];
 
 export function CharlieChatWidget() {
-  const [messages, setMessages] = useState<ChatMessage[]>(INITIAL_MESSAGES);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isActionsOpen, setIsActionsOpen] = useState(false);
 
   const listRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    void (async () => {
+      const data = await CharlieAIService.getAll();
+      setMessages(data as unknown as ChatMessage[]);
+    })();
+  }, []);
 
   useEffect(() => {
     // auto-scroll to bottom
@@ -30,29 +34,16 @@ export function CharlieChatWidget() {
     el.scrollTop = el.scrollHeight;
   }, [messages.length]);
 
-  const send = (text: string) => {
+  const send = async (text: string) => {
     const trimmed = text.trim();
     if (!trimmed) return;
-
-    const userMsg: ChatMessage = {
-      id: `u-${Date.now()}`,
-      role: "user",
-      text: trimmed,
-    };
-
-    setMessages((prev) => [...prev, userMsg]);
+  
     setInput("");
     setIsActionsOpen(false);
-
-    // demo AI reply (replace with real call)
-    window.setTimeout(() => {
-      const aiMsg: ChatMessage = {
-        id: `a-${Date.now()}`,
-        role: "ai",
-        text: "Got it — I can help with that. (Demo response)",
-      };
-      setMessages((prev) => [...prev, aiMsg]);
-    }, 450);
+  
+    await CharlieAIService.send(trimmed);
+    const updated = await CharlieAIService.getAll();
+    setMessages(updated as unknown as ChatMessage[]);
   };
 
   return (

@@ -33,26 +33,6 @@ Any assets you want to show will be stored in `public/` folder and not anywhere 
 
 You might not need to use all of them. But your main component file will be in `components` folder. Any API call your project makes will be stored in `api` folder. Any types defination will be stored in `types` folder.
 
-There are some required file naming conventions that you need to follow. Follow the steps below to create the folders and files required for a widget, please follow the naming conventions as per the step requires.
-
-**STEP 1:**
-
-Create a new folder inside `components` folder, and if applicable then in  `public`, `contexts`, `hooks`, and `types` folder as well *(You can learn more on adding context for in browser storage and hooks below)*. Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examples:
-
-- If your widget name is *Charlie AI*, it'll become `charlie-ai-widget` OR if *Ask Charlie* that'll become `ask-charlie-widget`.
-- If your widget name is *Notes*, it'll become `notes-widget`.
-
-> ***Important:*** *If the name of your widget is duplicated a unique 5 digit code will be assigned to it during review and you'll be notified accordingly. Names should not use any entity that you do not own. For example you can't make a google search widget if you're not Google*
-
-**STEP 2:**
-
-Next create the main widget file, in `components/your-name-folder-widget` folder. The name must be in **PascalCase**, here are a few examples:
-- If your widget name is *Charlie AI*, your component name will become `CharlieAIWidget.tsx`
-- If your widget name is *Notes*, it'll become `NotesWidget.tsx`.
-
-> Inside the components folder you'll create you `.css` file if needed.
-
-
 We advice to not change/modify any of the following files:
 
 - `App.css`, `index.css`, `mian.tsx`, `eslint.config.js`
@@ -61,6 +41,46 @@ We advice to not change/modify any of the following files:
   `tsconfig.app.json`,
   `tsconfig.json`,
   `tsconfig.node.json`,
-  `vite.config.ts`,
+  `vite.config.ts`
 
 The `package.json` can be edited, but if the developer reputation or the support is solid it can be modified as well. Otherwise we encourage to use the libraries we're using, you can propose other libraries that you think will be helpful by submitting [this form](https://forms.gle/tNuReTGmSbRGmPKCA).
+
+### Naming Conventions and Files
+
+There are some required file naming conventions that you need to follow. Follow the steps below to create the folders and files required for a widget, please follow the naming conventions as per the step requires.
+
+**STEP 1: Create widget key**
+
+Think of key as the main unique id for your widget project. It'll be used at many places and you'll be required to manage it accordingly to the structure defined.
+
+Create a new folder inside `components` folder, and if applicable then in  `public`, `contexts`, `hooks`, and `types` folder as well *(You can learn more on adding context for in browser storage and hooks below)*. Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examples:
+
+- If your widget name is *Charlie AI*, it'll become `charlie-ai-widget` OR if *Ask Charlie* that'll become `ask-charlie-widget`.
+- If your widget name is *Notes*, it'll become `notes-widget`.
+
+> If the name of your widget is duplicated a unique 5 digit code will be assigned to it during review and you'll be notified accordingly. Names should not use any entity that you do not own. For example you can't make a google search widget if you're not Google
+
+**STEP 2: Setting up API**
+
+Now create a folder in `api` folder as per your widget name. For example my widget is `charlie-ai-widget` you can see a folder by this name in `api` folder which you can refer to as needed.
+
+In this folder create a **PascalCase** file like for example *Charlie AI* widget which has `charlie-ai-widget` as key, will have the main **api** file as `CharlieAIService.ts` where `Service` is the mandatory prefix as this indicates the main file in your `api` widget-folder.
+
+> You can break the APIs down into different small files but as long as it is inside the your `my-widget-key-widget` folder in `api` and there is only 1 file with `Service` prefix it'll be fine.
+
+**STEP 3: Component UI**
+
+Next create the main widget file, in `components/your-name-folder-widget` folder. The name must be in **PascalCase**, here are a few examples:
+- If your widget name is *Charlie AI*, your component name will become `CharlieAIWidget.tsx`
+- If your widget name is *Notes*, it'll become `NotesWidget.tsx`.
+
+> Inside the components folder you'll create you `.css` or other smaller file if needed. You can also create sub-folder in your `my-widget-key-widget` folder inside `components`.
+
+This is all that is needed for a basic component to be build. Your UI and the back-end code all is configured. But if you need to use context and hooks, you can move to next steps.
+
+#### Context & Hooks
+
+In which scnearios will you need these:
+1. When you need to store data in the browser as you'll need to access it later.
+
+...WIP...

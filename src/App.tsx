@@ -48,8 +48,8 @@ export default function App() {
           Your widget will have to be within <span className="code">{`360px`}</span> width. There is also <span className="code">padding: 16px;</span> applied to the right sidebar to all widgets by default on entreprenote app so you don't have to add any margins.
         </span> </p>
         {/* Import and render <YourWidgetComponent /> here */}
-            {/* <CharlieChatWidget /> */}
-            Replace this placeholder with your widget component.
+            <CharlieChatWidget />
+            {/* Replace this placeholder with your widget component. */}
           </div>
         </div>
       </section>
