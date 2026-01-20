@@ -1,6 +1,6 @@
 # Entreprenote App: ReactJS Widget Starter Template
 
-Download or just clone and start builing the widget. When finised just submit the required files in the widget submittion template form.
+Download or just clone this project and start builing the widget. There are examples and guide given in this **README.md**. When you want to submit the template please use [this form](#) to submit your widget for review.
 
 If you plan to download and build locally, download this template then run `yarn`. To see if everything working fine from terminal run `yarn dev` and if this is running succesffully you can start building the widget.
 
@@ -37,11 +37,12 @@ There are some required file naming conventions that you need to follow. Follow 
 
 **STEP 1:**
 
-Create a new folder inside `components`, and if applicable then in `contexts`, `hooks`, and `types` folder as well. *You can learn mor eon adding context for in browser storage and hooks below*. Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examples:
-- If your widget name is *Charlie AI*, it'll become `charlie-ai-widget`
+Create a new folder inside `components` folder, and if applicable then in  `public`, `contexts`, `hooks`, and `types` folder as well *(You can learn more on adding context for in browser storage and hooks below)*. Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examples:
+
+- If your widget name is *Charlie AI*, it'll become `charlie-ai-widget` OR if *Ask Charlie* that'll become `ask-charlie-widget`.
 - If your widget name is *Notes*, it'll become `notes-widget`.
 
-***Important*** *If the name of your widget is duplicated a unique 5 digit code will be assigned to it during review and you'll be notified accordingly. Names should not use any entity that you do not own. For example you can't make a google search widget if you're not Google*
+> ***Important:*** *If the name of your widget is duplicated a unique 5 digit code will be assigned to it during review and you'll be notified accordingly. Names should not use any entity that you do not own. For example you can't make a google search widget if you're not Google*
 
 **STEP 2:**
 
@@ -49,7 +50,7 @@ Next create the main widget file, in `components/your-name-folder-widget` folder
 - If your widget name is *Charlie AI*, your component name will become `CharlieAIWidget.tsx`
 - If your widget name is *Notes*, it'll become `NotesWidget.tsx`.
 
-Inside the components folder you'll create you `.css` file if needed.
+> Inside the components folder you'll create you `.css` file if needed.
 
 
 We advice to not change/modify any of the following files:
@@ -61,3 +62,5 @@ We advice to not change/modify any of the following files:
   `tsconfig.json`,
   `tsconfig.node.json`,
   `vite.config.ts`,
+
+The `package.json` can be edited, but if the developer reputation or the support is solid it can be modified as well. Otherwise we encourage to use the libraries we're using, you can propose other libraries that you think will be helpful by submitting [this form](https://forms.gle/tNuReTGmSbRGmPKCA).
