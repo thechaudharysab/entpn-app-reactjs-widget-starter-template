@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import entreprenoteicon from '../public/entreprenote_icon.svg';
 import './App.css';
+import { CharlieChatWidget } from './components/charlie-ai-widget/CharlieAIWidget';
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -42,12 +43,23 @@ export default function App() {
       <section className="panel previewWrap">
         {/* Import and render <YourWidgetComponent /> inside this div */}
         <div className="widgetArea">
-          <div className="placeholder">
-            Replace this placeholder with your widget component.
-            <br />
-            <span className="code">{`<YourWidgetComponent />`}</span>
+          <div className="widgetAreaBody">
+          <h3>Preview (360px)</h3>
+          <p className="help">
+          Your widget will have to be within <span className="code">{`360px`}</span> width. There is also <span className="code">padding: 16px;</span> applied to the right sidebar on entreprenote app.
+        </p>
+            <CharlieChatWidget />
+            {/* Replace this placeholder with your widget component. */}
           </div>
         </div>
+        {/* <div className="widgetArea"> */}
+          {/* <CharlieChatWidget /> */}
+          {/* <div className="widgetAreaBody">
+            Replace this placeholder with your widget component.
+            <br /> */}
+            {/* <span className="code">{`<YourWidgetComponent />`}</span> */}
+          {/* </div> */}
+        {/* </div> */}
       </section>
     </div>
   );

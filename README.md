@@ -33,9 +33,24 @@ Any assets you want to show will be stored in `public/` folder and not anywhere 
 
 You might not need to use all of them. But your main component file will be in `components` folder. Any API call your project makes will be stored in `api` folder. Any types defination will be stored in `types` folder.
 
-There are some required file naming conventions that you need to follow:
+There are some required file naming conventions that you need to follow. Follow the steps below to create the folders and files required for a widget, please follow the naming conventions as per the step requires.
 
-- Your main app id will be `components` main files
+**STEP 1:**
+
+Create a new folder inside `components`, and if applicable then in `contexts`, `hooks`, and `types` folder as well. *You can learn mor eon adding context for in browser storage and hooks below*. Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examples:
+- If your widget name is *Charlie AI*, it'll become `charlie-ai-widget`
+- If your widget name is *Notes*, it'll become `notes-widget`.
+
+***Important*** *If the name of your widget is duplicated a unique 5 digit code will be assigned to it during review and you'll be notified accordingly. Names should not use any entity that you do not own. For example you can't make a google search widget if you're not Google*
+
+**STEP 2:**
+
+Next create the main widget file, in `components/your-name-folder-widget` folder. The name must be in **PascalCase**, here are a few examples:
+- If your widget name is *Charlie AI*, your component name will become `CharlieAIWidget.tsx`
+- If your widget name is *Notes*, it'll become `NotesWidget.tsx`.
+
+Inside the components folder you'll create you `.css` file if needed.
+
 
 We advice to not change/modify any of the following files:
 
@@ -46,77 +61,3 @@ We advice to not change/modify any of the following files:
   `tsconfig.json`,
   `tsconfig.node.json`,
   `vite.config.ts`,
-
-### React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

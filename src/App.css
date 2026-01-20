@@ -5,7 +5,7 @@
   --card: #ffffff;
   --text: #111827;
   --muted: #6b7280;
-  --border: rgba(0, 0, 0, 0.08);
+  --border: rgba(0, 0, 0, 0.2);
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
@@ -78,7 +78,7 @@ body {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   padding: 16px;
 }
 
@@ -144,10 +144,10 @@ body {
   max-width: 100%;
   min-height: 520px;
 
-  background: #ffffff;
-  border: 1px solid var(--border);
+  background: #F3F8FF;
+  border: 1px dashed var(--border);
   border-radius: 16px;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
 
   display: flex;
   flex-direction: column;
@@ -155,8 +155,8 @@ body {
 }
 
 .widgetArea > * {
-  flex: 1;
-  overflow-y: auto;
+  /* flex: 1; */
+  /* overflow-y: auto; */
   padding: 16px;
 }
 
