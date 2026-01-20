@@ -72,7 +72,7 @@ export function CharlieChatWidget() {
             >
               {!isUser && (
                 <img
-                  src="/charlie-icon.svg"
+                  src="./charlie-ai-widget/charlie-icon.png"
                   alt="Charlie"
                   className="charlieAvatar"
                 />
@@ -86,14 +86,19 @@ export function CharlieChatWidget() {
       </div>
 
       <div className="charlieComposer">
-        <button
+      <div className="counter">
+            <button type="button" className="charlieBolt" onClick={() => setIsActionsOpen((v) => !v)}>
+            🪄
+            </button>
+          </div>
+        {/* <button
           type="button"
           className="charlieBolt"
           aria-label="Quick actions"
           onClick={() => setIsActionsOpen((v) => !v)}
         >
-          ✨
-        </button>
+          <p className="charlieBoltText">C</p>
+        </button> */}
 
         <input
           className="charlieInput"

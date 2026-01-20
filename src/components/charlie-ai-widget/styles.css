@@ -93,14 +93,20 @@
   }
   
   .charlieBolt {
-    height: 34px;
-    width: 34px;
+    border: 1px solid var(--border);
+    background: #fff;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    background: #f9fafb;
+    /* padding: 8px 12px; */
     cursor: pointer;
+    font-weight: 600;
+  }
+
+  .counter {
+    display: inline-flex;
+    align-items: center;
+    /* gap: 10px; */
+    color: var(--muted);
     font-size: 14px;
-    line-height: 1;
   }
   
   .charlieBolt:hover {
