@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
+import "./styles.css"
+
 type Role = "user" | "ai";
 type ChatMessage = { id: string; role: Role; text: string };
 
 const INITIAL_MESSAGES: ChatMessage[] = [
-  { id: "m1", role: "ai", text: "Hey, I’m Charlie. Ask me about your notes." },
+  { id: "m1", role: "ai", text: "Hey, I'm Charlie. Ask me about your notes." },
 ];
 
 const QUICK_ACTIONS = [

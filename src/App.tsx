@@ -44,22 +44,14 @@ export default function App() {
         {/* Import and render <YourWidgetComponent /> inside this div */}
         <div className="widgetArea">
           <div className="widgetAreaBody">
-          <h3>Preview (360px)</h3>
-          <p className="help">
-          Your widget will have to be within <span className="code">{`360px`}</span> width. There is also <span className="code">padding: 16px;</span> applied to the right sidebar on entreprenote app.
-        </p>
+          <p>Preview:{" "} 
+          <span className="help" style={{marginBottom: 12}}>
+          Your widget will have to be within <span className="code">{`360px`}</span> width. There is also <span className="code">padding: 16px;</span> applied to the right sidebar to all widgets by default on entreprenote app so you don't have to add any margins.
+        </span> </p>
             <CharlieChatWidget />
             {/* Replace this placeholder with your widget component. */}
           </div>
         </div>
-        {/* <div className="widgetArea"> */}
-          {/* <CharlieChatWidget /> */}
-          {/* <div className="widgetAreaBody">
-            Replace this placeholder with your widget component.
-            <br /> */}
-            {/* <span className="code">{`<YourWidgetComponent />`}</span> */}
-          {/* </div> */}
-        {/* </div> */}
       </section>
     </div>
   );
