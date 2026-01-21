@@ -53,7 +53,9 @@ There are some required file naming conventions that you need to follow. Follow 
 
 Think of key as the main unique id for your widget project. It'll be used at many places and you'll be required to manage it accordingly to the structure defined.
 
-Create a new folder inside `components` folder, and if applicable then in  `public`, `contexts`, `hooks`, and `types` folder as well *(You can learn more on adding context for in browser storage and hooks below)*. Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examples:
+Create a new folder inside `components` folder, and if applicable then in  `public`, `contexts`, `hooks`, and `types` folder as well *(You can learn more on adding context for in browser storage and hooks below)*. If you're going to add a file in any folders inside `src` it has to be in your widget name key.
+
+Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examples:
 
 - If your widget name is *Charlie AI*, it'll become `charlie-ai-widget` OR if *Ask Charlie* that'll become `ask-charlie-widget`.
 - If your widget name is *Notes*, it'll become `notes-widget`.
