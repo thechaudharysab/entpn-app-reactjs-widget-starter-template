@@ -55,7 +55,7 @@ Think of key as the main unique id for your widget project. It'll be used at man
 
 Create a new folder inside `components` folder, and if applicable then in  `public`, `contexts`, `hooks`, and `types` folder as well *(You can learn more on adding context for in browser storage and hooks below)*. If you're going to add a file in any folders inside `src` it has to be in your widget name key.
 
-Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examples:
+Name this folder in **kebab-case** (no-caps) with `-widget` as postfix. See examples:
 
 - If your widget name is *Charlie AI*, it'll become `charlie-ai-widget` OR if *Ask Charlie* that'll become `ask-charlie-widget`.
 - If your widget name is *Notes*, it'll become `notes-widget`.
@@ -66,9 +66,9 @@ Name this folder in **kebab-case** (no-caps) with `-widget` as prefix. See examp
 
 Now create a folder in `api` folder as per your widget name. For example my widget is `charlie-ai-widget` you can see a folder by this name in `api` folder which you can refer to as needed.
 
-In this folder create a **PascalCase** file like for example *Charlie AI* widget which has `charlie-ai-widget` as key, will have the main **api** file as `CharlieAIService.ts` where `Service` is the mandatory prefix as this indicates the main file in your `api` widget-folder.
+In this folder create a **PascalCase** file like for example *Charlie AI* widget which has `charlie-ai-widget` as key, will have the main **api** file as `CharlieAIService.ts` where `Service` is the mandatory postfix as this indicates the main file in your `api` widget-folder.
 
-> You can break the APIs down into different small files but as long as it is inside the your `my-widget-key-widget` folder in `api` and there is only 1 file with `Service` prefix it'll be fine.
+> You can break the APIs down into different small files but as long as it is inside the your `my-widget-key-widget` folder in `api` and there is only 1 file with `Service` postfix it'll be fine.
 
 **STEP 3: Component UI**
 
